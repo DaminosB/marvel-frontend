@@ -1,0 +1,10 @@
+.related-items {
+  /* Flexbox */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.related-items > div {
+  width: calc((100% - 60px) / 5);
+}

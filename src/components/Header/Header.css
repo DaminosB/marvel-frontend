@@ -1,0 +1,6 @@
+header.container {
+  /* Flexbox */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,142 @@
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* --GENERAL---------------------------------- */
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+body {
+  /* Background */
+  background-color: black;
+
+  /* Font */
+  color: white;
+}
+
+button {
+  /* Aspect */
+  cursor: pointer;
+}
+
+button[type="submit"].disabled {
+  /* Background */
+  background-color: gray;
+}
+
+h1 {
+  /* Font */
+  font-size: 60px;
+
+  /* Marges */
+  margin: 15px 0;
+}
+
+p.error-message {
+  /* Font */
+  font-size: 12px;
+  color: red;
+}
+
+.container {
+  /* Dimensions */
+  max-width: 1200px;
+
+  /* Marges */
+  margin: 0 auto;
+}
+
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* --Titles----------------------------------- */
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+
+.titles {
+  /* Flexbox */
+  display: flex;
+  justify-content: space-around;
+}
+
+.titles h2 {
+  /* Aspect */
+  cursor: pointer;
+}
+
+.titles h2.inactive {
+  /* Font */
+  color: gray;
+}
+
+.connexion-titles h2.active {
+  /* Font */
+  color: black;
+}
+
+.blue-theme {
+  /* Background */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.5),
+    20%,
+    rgba(0, 0, 139, 1)
+  );
+}
+
+.red-theme {
+  /* Background */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.5),
+    20%,
+    rgba(255, 0, 0, 1)
+  );
+}
+
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* --Modals----------------------------------- */
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+.modal-wrapper {
+  /* Position */
+  position: fixed;
+  top: 0;
+
+  /* Dimensions */
+  width: 100vw;
+  height: 100vh;
+
+  /* Flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Background */
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.modal-wrapper button.close-button {
+  /* Position */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.modal-wrapper > form {
+  /* Position */
+  position: relative;
+
+  /* Flexbox */
+  display: flex;
+  flex-direction: column;
+
+  /* Background */
+  background-color: white;
+
+  /* Font */
+  color: black;
+
+  /* Marges */
+  padding: 25px;
+}

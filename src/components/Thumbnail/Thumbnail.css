@@ -1,0 +1,44 @@
+.thumbnail > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail {
+  /* Position */
+  position: relative;
+
+  /* Dimensions */
+  height: 100%;
+
+  /* Flexbox */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.thumbnail-text {
+  /* Position */
+  position: absolute;
+
+  /* Dimensions */
+  height: 100%;
+  width: 100%;
+
+  /* Flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  /* Marges */
+  padding: 10px;
+
+  /* Aspect */
+  opacity: 0;
+  overflow: hidden;
+}
+
+.thumbnail-text:hover {
+  opacity: 1;
+  transition: 250ms;
+}

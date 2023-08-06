@@ -1,0 +1,23 @@
+section.results-array {
+  /* Flexbox */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+section.results-array > div {
+  /* Dimensions */
+  width: calc((100% - 75px) / 6);
+  height: 100%;
+
+  /* Flexbox */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  /* Marges */
+  margin-bottom: 25px;
+
+  /* Aspect */
+  cursor: pointer;
+}

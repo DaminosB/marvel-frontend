@@ -1,0 +1,31 @@
+.display-wrapper {
+  /* Position */
+  position: fixed;
+  top: 0;
+
+  /* Dimensions */
+  width: 100vw;
+  height: 100vh;
+
+  overflow: scroll;
+}
+
+.display-wrapper > div.container {
+  max-width: 800px;
+}
+
+.display-wrapper > button {
+  /* Position */
+  position: absolute;
+  top: 35px;
+  right: 35px;
+}
+
+.display-wrapper h3 {
+  /* Marges */
+  margin-top: 50px;
+
+  /* Font */
+  font-size: 45px;
+  /* text-shadow: 0 0 15px white; */
+}
