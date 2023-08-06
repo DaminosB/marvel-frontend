@@ -1,11 +1,43 @@
 header {
+  /* border: 1px yellow solid; */
   /* Font */
   font-family: "VT323", monospace;
-}
 
-header.container {
   /* Flexbox */
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+header > div:last-of-type {
+  /* Dimensions */
+  width: 100%;
+
+  /* Flexbox */
+  display: flex;
+  justify-content: space-around;
+}
+
+header button {
+  /* Font */
+  font-size: 25px;
+
+  /* Borders */
+  border: 1px white solid;
+
+  /* Marges */
+  padding: 5px;
+
+  /* Background */
+  background-color: black;
+}
+
+header button:hover {
+  /* Background */
+  background-color: white;
+
+  /* Font */
+  color: black;
+
+  transition: 250ms;
 }
