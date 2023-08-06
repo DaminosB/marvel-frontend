@@ -1,5 +1,8 @@
 import "./Connexion.css";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRectangleXmark } from "@fortawesome/free-regular-svg-icons";
+import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 import Login from "./Login";
 import Signup from "./Signup";
 
@@ -17,7 +20,7 @@ const Connexion = ({ setToken, setShowConnexion }) => {
             setShowConnexion(false);
           }}
         >
-          X
+          <FontAwesomeIcon icon={faRectangleXmark} />
         </button>
         <div className="titles">
           <h2

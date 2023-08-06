@@ -31,7 +31,7 @@ h1 {
 
 p.error-message {
   /* Font */
-  font-size: 12px;
+  font-size: 14px;
   color: red;
 }
 
@@ -54,6 +54,9 @@ p.error-message {
   /* Flexbox */
   display: flex;
   justify-content: space-around;
+
+  /* Marges */
+  margin-bottom: 15px;
 }
 
 .titles h2 {
@@ -66,9 +69,9 @@ p.error-message {
   color: gray;
 }
 
-.connexion-titles h2.active {
+.titles h2.active {
   /* Font */
-  color: black;
+  color: white;
 }
 
 div.blue-theme {

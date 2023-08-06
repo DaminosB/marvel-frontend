@@ -1,0 +1,59 @@
+.modal-wrapper > form {
+  /* Background */
+  background-color: black;
+
+  /* Font */
+  font-family: "VT323", monospace;
+}
+
+.modal-wrapper .close-button {
+  /* Background */
+  background-color: inherit;
+
+  /* Font */
+  color: white;
+  font-size: 25px;
+}
+
+.modal-wrapper h2 {
+  /* Font */
+  font-size: 25px;
+}
+
+.modal-wrapper > form input {
+  /* Dimensions */
+  width: 250px;
+
+  /* Marges */
+  margin-bottom: 15px;
+
+  /* Font */
+  font-size: 20px;
+  font-family: "VT323", monospace;
+}
+
+.modal-wrapper button[type="submit"] {
+  /* Background */
+  background-color: black;
+
+  /* Font */
+  color: white;
+  font-size: 20px;
+
+  /* Borders */
+  border: 1px white solid;
+
+  /* Marges */
+  margin-top: 15px;
+  padding: 5px;
+}
+
+.modal-wrapper button[type="submit"]:hover {
+  /* Background */
+  background-color: white;
+
+  /* Font */
+  color: black;
+
+  transition: 250ms;
+}
