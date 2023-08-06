@@ -18,6 +18,7 @@ const ContentFetcher = ({
   const [isLoading, setIsLoading] = useState(true);
 
   const [page, setPage] = useState(1);
+  const [count, setCount] = useState(0);
 
   const [bookmarks, setBookmarks] = useState([]);
 
@@ -38,9 +39,8 @@ const ContentFetcher = ({
               },
             }
           );
-          const dataToDisplay = data.message.results;
-          setData(dataToDisplay);
-          console.log("home", bookmarks);
+          setData(data.message.results);
+          setCount(data.message.count);
           setBookmarks(data.message.bookmarks);
         } else if (location.pathname === "/user/bookmarks") {
           const { data } = await axios.get(
@@ -67,8 +67,13 @@ const ContentFetcher = ({
   }, [type, searchBar, page]);
 
   return (
-    <main className="container">
-      <Filter searchBar={searchBar} setSearchBar={setSearchBar} type={type} />
+    <main className="container main-pages">
+      <Filter
+        searchBar={searchBar}
+        setSearchBar={setSearchBar}
+        type={type}
+        setPage={setPage}
+      />
       <div className="titles">
         <h2
           className={type === "character" ? "active" : "inactive"}
@@ -88,6 +93,9 @@ const ContentFetcher = ({
         </h2>
       </div>
       <ResultsArray
+        count={count}
+        page={page}
+        setPage={setPage}
         results={data}
         type={type}
         isLoading={isLoading}

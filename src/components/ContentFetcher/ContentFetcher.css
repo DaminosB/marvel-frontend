@@ -1,0 +1,11 @@
+.main-pages > .titles {
+  /* Font */
+  font-size: 25px;
+
+  /* Marges */
+  margin-bottom: 35px;
+
+  /* Flexbox */
+  justify-content: flex-start;
+  gap: 15px;
+}

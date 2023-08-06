@@ -1,3 +1,17 @@
-input[type="search"] {
-  width: 500px;
+main > form {
+  /* Font */
+  font-family: "VT323", monospace;
+  font-size: 20px;
+}
+
+main > form input {
+  /* Dimensions */
+  height: 25px;
+  min-width: 500px;
+  /* Marges */
+  margin-bottom: 50px;
+
+  /* Font */
+  font-family: "VT323", monospace;
+  font-size: 20px;
 }

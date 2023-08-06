@@ -1,3 +1,44 @@
+main > .navigation {
+  /* Flexbox */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Marges */
+  margin-bottom: 25px;
+}
+
+main nav {
+  /* Flexbox */
+  display: flex;
+  gap: 15px;
+
+  /* Font */
+  font-size: 20px;
+
+  /* Aspect */
+  cursor: pointer;
+}
+
+main nav input {
+  /* Marges */
+  width: 25px;
+}
+/* Hide input arrows */
+/* Chrome */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Opéra*/
+input::-o-inner-spin-button,
+input::-o-outer-spin-button {
+  -o-appearance: none;
+  margin: 0;
+}
+
 section.results-array {
   /* Flexbox */
   display: flex;

@@ -83,8 +83,6 @@ const Thumbnail = ({
       }
     }
 
-    console.log(bookmarks);
-
     if (!text) {
       setThumbnailText("Description unavailable");
     }

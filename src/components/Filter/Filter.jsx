@@ -1,6 +1,6 @@
 import "./Filter.css";
 
-const Filter = ({ searchBar, setSearchBar, type }) => {
+const Filter = ({ searchBar, setSearchBar, type, setPage }) => {
   return (
     <form>
       <label htmlFor="search">
@@ -10,6 +10,7 @@ const Filter = ({ searchBar, setSearchBar, type }) => {
           id="search"
           placeholder={`Search through our ${type} database`}
           onChange={(event) => {
+            setPage(1);
             setSearchBar(event.target.value);
           }}
           value={searchBar}
