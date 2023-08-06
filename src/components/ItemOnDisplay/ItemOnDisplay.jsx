@@ -1,8 +1,9 @@
 import "./ItemOnDisplay.css";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
 import axios from "axios";
 import RelatedItems from "../RelatedItems/RelatedItems";
-import BookmarkIcon from "../BookmarkIcon/BookmarkIcon";
 
 const ItemOnDisplay = ({
   token,
@@ -25,8 +26,9 @@ const ItemOnDisplay = ({
     try {
       const fetchData = async () => {
         const { data } = await axios.get(
-          `https://site--marvel-backend--kc7q9tc45mqv.code.run/${type}/${idOnDisplay}`
-          //   `http://localhost:3000/${type}/${idOnDisplay}`
+          `https://site--marvel-backend--kc7q9tc45mqv.code.run/${type}/${idOnDisplay}`,
+          // `http://localhost:3000/${type}/${idOnDisplay}`,
+          { headers: { authorization: `Bearer ${token}` } }
         );
         setDataOnDisplay(data.message);
 
@@ -61,7 +63,8 @@ const ItemOnDisplay = ({
           setActiveComic("");
         }}
       >
-        X
+        {/* <FontAwesomeIcon icon={faXmark} /> */}
+        <FontAwesomeIcon icon={faXmarkCircle} />
       </button>
       <div className="container">
         {activeCharacter && activeComic && (
@@ -71,6 +74,7 @@ const ItemOnDisplay = ({
                 setType("character");
                 setIdOnDisplay(activeCharacter);
               }}
+              className={type === "character" ? "active" : "inactive"}
             >
               Characters
             </h2>
@@ -79,27 +83,32 @@ const ItemOnDisplay = ({
                 setType("comic");
                 setIdOnDisplay(activeComic);
               }}
+              className={type === "comic" ? "active" : "inactive"}
             >
               Comics
             </h2>
           </div>
         )}
         <h3>{itemTitle}</h3>
-        <img
-          src={`${dataOnDisplay.thumbnail.path}/portrait_uncanny.${dataOnDisplay.thumbnail.extension}`}
-          alt={`Picture of ${itemTitle}`}
-        />
-        {dataOnDisplay.description && <p>{dataOnDisplay.description}</p>}
-        <h4>Appearances</h4>
-        {dataOnDisplay.comics && (
-          <RelatedItems
-            token={token}
-            type={type}
-            itemID={dataOnDisplay._id}
-            characterId={dataOnDisplay._id}
-            setIdOnDisplay={setIdOnDisplay}
-            setType={setType}
+        <div className="item-infos">
+          <img
+            src={`${dataOnDisplay.thumbnail.path}/portrait_uncanny.${dataOnDisplay.thumbnail.extension}`}
+            alt={`Picture of ${itemTitle}`}
           />
+          {dataOnDisplay.description && <p>{dataOnDisplay.description}</p>}
+        </div>
+        {dataOnDisplay.comics && (
+          <>
+            <h4>Appearances</h4>
+            <RelatedItems
+              token={token}
+              type={type}
+              itemID={dataOnDisplay._id}
+              characterId={dataOnDisplay._id}
+              setIdOnDisplay={setIdOnDisplay}
+              setType={setType}
+            />
+          </>
         )}
       </div>
     </div>

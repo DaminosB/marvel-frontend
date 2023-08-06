@@ -10,23 +10,27 @@ const BookmarkIcon = ({
   handleRemoveBookmark,
 }) => {
   return isBookmarked ? (
-    <FontAwesomeIcon
-      icon={solidHeart}
-      className={`bookmark ${theme}`}
-      onClick={(event) => {
-        event.stopPropagation();
-        handleRemoveBookmark();
-      }}
-    />
+    <button>
+      <FontAwesomeIcon
+        icon={solidHeart}
+        className={`bookmark ${theme}`}
+        onClick={(event) => {
+          event.stopPropagation();
+          handleRemoveBookmark();
+        }}
+      />
+    </button>
   ) : (
-    <FontAwesomeIcon
-      icon={regularHeart}
-      className={`bookmark ${theme}`}
-      onClick={(event) => {
-        event.stopPropagation();
-        handleAddBookmark();
-      }}
-    />
+    <button>
+      <FontAwesomeIcon
+        icon={regularHeart}
+        className={`bookmark ${theme}`}
+        onClick={(event) => {
+          event.stopPropagation();
+          handleAddBookmark();
+        }}
+      />
+    </button>
   );
 };
 

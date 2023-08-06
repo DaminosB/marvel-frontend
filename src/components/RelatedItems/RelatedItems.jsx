@@ -47,7 +47,7 @@ const RelatedItems = ({
               setType("comic");
             }}
           >
-            <h4>{item.title}</h4>
+            <h5>{item.title}</h5>
             <Thumbnail
               type="comic"
               bookmarks={bookmarks}

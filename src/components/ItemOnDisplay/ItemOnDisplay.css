@@ -20,6 +20,33 @@
   position: absolute;
   top: 35px;
   right: 35px;
+
+  /* Font */
+  font-size: 50px;
+
+  /* Background */
+  background-color: transparent;
+
+  color: white;
+}
+
+.display-wrapper > button:hover {
+  color: black;
+
+  transition: 250ms;
+}
+
+.display-wrapper .titles > h2 {
+  margin-top: 40px;
+  font-size: 40px;
+}
+
+.display-wrapper .titles > h2.active {
+  text-shadow: 0 0 10px white;
+}
+
+.display-wrapper .titles > h2.inactive {
+  color: rgb(39, 39, 39);
 }
 
 .display-wrapper h3 {
@@ -29,4 +56,26 @@
   /* Font */
   font-size: 45px;
   /* text-shadow: 0 0 15px white; */
+}
+
+.display-wrapper .item-infos {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.display-wrapper .item-infos p {
+  background-color: rgba(255, 255, 255, 0.25);
+
+  padding: 25px;
+  height: 100%;
+  flex: 1;
+}
+
+.display-wrapper h4 {
+  /* Font */
+  font-size: 20px;
+
+  /* Marges */
+  margin-top: 35px;
 }

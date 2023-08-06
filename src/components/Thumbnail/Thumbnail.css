@@ -9,7 +9,7 @@
   position: relative;
 
   /* Dimensions */
-  height: 100%;
+  /* height: 100%; */
 
   /* Flexbox */
   display: flex;
@@ -38,17 +38,14 @@
   overflow: hidden;
 }
 
-.thumbnail-text:hover {
+section.results-array > div:hover .thumbnail-text {
   opacity: 1;
   transition: 250ms;
 }
 
-svg.bookmark {
-  /* Position */
-  position: absolute;
-  top: 0;
-  right: 10px;
-  z-index: 1;
+.display-wrappery > div:hover .thumbnail-text {
+  opacity: 1;
+  transition: 250ms;
 }
 
 .thumbnail-infos {
@@ -64,6 +61,7 @@ svg.bookmark {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 
   /* Background */
   background-color: rgba(255, 255, 255, 0.5);

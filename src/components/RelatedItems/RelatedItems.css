@@ -7,4 +7,15 @@
 
 .related-items > div {
   width: calc((100% - 60px) / 5);
+  cursor: pointer;
+}
+
+.related-items h5 {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.related-items > div:hover .thumbnail-text {
+  opacity: 1;
+  transition: 250ms;
 }

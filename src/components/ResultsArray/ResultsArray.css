@@ -61,4 +61,24 @@ section.results-array > div {
 
   /* Aspect */
   cursor: pointer;
+
+  overflow: hidden;
+}
+
+section.results-array h3 {
+  /* Dimensions */
+  height: 50px;
+
+  /* Font */
+  line-height: 25px;
+  font-size: 20px;
+
+  text-overflow: ellipsis;
+}
+
+section.results-array > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
 }

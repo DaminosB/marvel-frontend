@@ -1,0 +1,38 @@
+svg.bookmark {
+  /* Position */
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  z-index: 1;
+
+  /* Dimensions */
+  width: 15px;
+  height: 15px;
+  background-color: white;
+
+  /* Borders */
+  border-radius: 50%;
+
+  /* Marges */
+  padding: 5px;
+}
+
+svg.bookmark.red-theme:hover {
+  /* Background */
+  background-color: red;
+
+  /* Font */
+  color: white;
+
+  transition: 250ms;
+}
+
+svg.bookmark.blue-theme:hover {
+  /* Background */
+  background-color: darkblue;
+
+  /* Font */
+  color: white;
+
+  transition: 250ms;
+}

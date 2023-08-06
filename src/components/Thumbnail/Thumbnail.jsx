@@ -1,9 +1,6 @@
 import "./Thumbnail.css";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
-import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import BookmarkIcon from "../BookmarkIcon/BookmarkIcon";
 
