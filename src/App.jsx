@@ -33,6 +33,7 @@ function App() {
             path="/"
             element={
               <HomePage
+                token={token}
                 setShowItemOnDisplay={setShowItemOnDisplay}
                 type={type}
                 setType={setType}
@@ -58,6 +59,7 @@ function App() {
         )}
         {showItemOnDisplay && (
           <ItemOnDisplay
+            token={token}
             setToken={setToken}
             setShowItemOnDisplay={setShowItemOnDisplay}
             type={type}

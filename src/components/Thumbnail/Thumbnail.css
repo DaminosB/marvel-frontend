@@ -42,3 +42,32 @@
   opacity: 1;
   transition: 250ms;
 }
+
+svg.bookmark {
+  /* Position */
+  position: absolute;
+  top: 0;
+  right: 10px;
+  z-index: 1;
+}
+
+.thumbnail-infos {
+  /* Position */
+  position: absolute;
+  z-index: 2;
+
+  /* Dimensions */
+  height: 100%;
+  width: 100%;
+
+  /* Flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Background */
+  background-color: rgba(255, 255, 255, 0.5);
+
+  /* Font */
+  color: black;
+}

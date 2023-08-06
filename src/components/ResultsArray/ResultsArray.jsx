@@ -7,6 +7,8 @@ const ResultsArray = ({
   type,
   setShowItemOnDisplay,
   setIdOnDisplay,
+  bookmarks,
+  token,
 }) => {
   return isLoading ? (
     <p>Chargement</p>
@@ -33,10 +35,14 @@ const ResultsArray = ({
           >
             <h3>{thumbnailTitle}</h3>
             <Thumbnail
+              id={result._id}
               format="portrait_xlarge"
               image={result.thumbnail}
               text={result.description}
               theme={thumbnailTheme}
+              bookmarks={bookmarks}
+              type={type}
+              token={token}
             />
           </div>
         );

@@ -31,6 +31,7 @@ const Signup = ({ setToken, setShowConnexion }) => {
       setShowConnexion(false);
       setIsLoading(false);
     } catch (error) {
+      setIsLoading(false);
       setErrorMessage(error.response.data.message);
     }
   };

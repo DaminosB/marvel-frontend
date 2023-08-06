@@ -19,6 +19,8 @@ const ContentFetcher = ({
 
   const [page, setPage] = useState(1);
 
+  const [bookmarks, setBookmarks] = useState([]);
+
   const location = useLocation();
 
   useEffect(() => {
@@ -28,11 +30,18 @@ const ContentFetcher = ({
 
         if (location.pathname === "/") {
           const { data } = await axios.get(
-            `https://site--marvel-backend--kc7q9tc45mqv.code.run/${type}s?page=${page}&name=${searchBar}`
-            // `http://localhost:3000/${type}?page=${page}&name=${searchBar}`
+            `https://site--marvel-backend--kc7q9tc45mqv.code.run/${type}s?page=${page}&name=${searchBar}`,
+            // `http://localhost:3000/${type}s?page=${page}&name=${searchBar}`,
+            {
+              headers: {
+                authorization: `Bearer ${token}`,
+              },
+            }
           );
           const dataToDisplay = data.message.results;
           setData(dataToDisplay);
+          console.log("home", bookmarks);
+          setBookmarks(data.message.bookmarks);
         } else if (location.pathname === "/user/bookmarks") {
           const { data } = await axios.get(
             `https://site--marvel-backend--kc7q9tc45mqv.code.run/user/bookmarks/${type}`,
@@ -44,6 +53,9 @@ const ContentFetcher = ({
             }
           );
           setData(data.message);
+          const arrayOfBookmarks = [];
+          data.message.map((bookmark) => arrayOfBookmarks.push(bookmark._id));
+          setBookmarks(arrayOfBookmarks);
         }
         setIsLoading(false);
       };
@@ -81,6 +93,8 @@ const ContentFetcher = ({
         isLoading={isLoading}
         setShowItemOnDisplay={setShowItemOnDisplay}
         setIdOnDisplay={setIdOnDisplay}
+        bookmarks={bookmarks}
+        token={token}
       />
     </main>
   );

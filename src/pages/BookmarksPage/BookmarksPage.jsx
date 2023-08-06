@@ -1,7 +1,6 @@
 import "./BookmarksPage.css";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import ResultsArray from "../../components/ResultsArray/ResultsArray";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import ContentFetcher from "../../components/ContentFetcher/ContentFetcher";
 
 const BookmarksPage = ({
@@ -11,6 +10,12 @@ const BookmarksPage = ({
   setType,
   setIdOnDisplay,
 }) => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!token) {
+      navigate("/");
+    }
+  });
   return (
     <ContentFetcher
       token={token}

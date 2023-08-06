@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
 /* ------------------------------------------- */
 /* ------------------------------------------- */
 /* --GENERAL---------------------------------- */
@@ -24,7 +26,7 @@ button[type="submit"].disabled {
 
 h1 {
   /* Font */
-  font-size: 60px;
+  font-size: 96px;
 
   /* Marges */
   margin: 15px 0;
@@ -72,7 +74,7 @@ p.error-message {
   color: black;
 }
 
-.blue-theme {
+div.blue-theme {
   /* Background */
   background: linear-gradient(
     45deg,
@@ -82,7 +84,12 @@ p.error-message {
   );
 }
 
-.red-theme {
+svg.blue-theme {
+  /* Font */
+  color: darkblue;
+}
+
+div.red-theme {
   /* Background */
   background: linear-gradient(
     45deg,
@@ -90,6 +97,11 @@ p.error-message {
     20%,
     rgba(255, 0, 0, 1)
   );
+}
+
+svg.red-theme {
+  /* Font */
+  color: red;
 }
 
 /* ------------------------------------------- */

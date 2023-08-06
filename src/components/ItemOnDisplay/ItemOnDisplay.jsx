@@ -2,8 +2,10 @@ import "./ItemOnDisplay.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import RelatedItems from "../RelatedItems/RelatedItems";
+import BookmarkIcon from "../BookmarkIcon/BookmarkIcon";
 
 const ItemOnDisplay = ({
+  token,
   setShowItemOnDisplay,
   type,
   setType,
@@ -85,13 +87,15 @@ const ItemOnDisplay = ({
         <h3>{itemTitle}</h3>
         <img
           src={`${dataOnDisplay.thumbnail.path}/portrait_uncanny.${dataOnDisplay.thumbnail.extension}`}
-          alt=""
+          alt={`Picture of ${itemTitle}`}
         />
         {dataOnDisplay.description && <p>{dataOnDisplay.description}</p>}
         <h4>Appearances</h4>
         {dataOnDisplay.comics && (
           <RelatedItems
-            itemsId={dataOnDisplay.comics}
+            token={token}
+            type={type}
+            itemID={dataOnDisplay._id}
             characterId={dataOnDisplay._id}
             setIdOnDisplay={setIdOnDisplay}
             setType={setType}
