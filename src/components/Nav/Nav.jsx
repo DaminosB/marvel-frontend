@@ -77,12 +77,12 @@ const Nav = ({
         <FontAwesomeIcon
           icon={faAnglesLeft}
           onClick={handleGoFirstPage}
-          className={page === 1 ? "inactive" : ""}
+          className={page === 1 ? "inactive" : "active"}
         />
         <FontAwesomeIcon
           icon={faChevronLeft}
           onClick={handlePreviousPage}
-          className={page === 1 ? "inactive" : ""}
+          className={page === 1 ? "inactive" : "active"}
         />
         <input
           id="pagenumber"
@@ -95,12 +95,12 @@ const Nav = ({
         <FontAwesomeIcon
           icon={faChevronRight}
           onClick={handleNextPage}
-          className={page === numberOfPages ? "inactive" : ""}
+          className={page === numberOfPages ? "inactive" : "active"}
         />
         <FontAwesomeIcon
           icon={faAnglesRight}
           onClick={handleGoLastPage}
-          className={page === numberOfPages ? "inactive" : ""}
+          className={page === numberOfPages ? "inactive" : "active"}
         />
       </nav>
     </div>
