@@ -9,9 +9,23 @@ const Connexion = ({ setToken, setShowConnexion }) => {
   const [showLogin, setShowLogin] = useState(true);
   const [showSignup, setShowSignup] = useState(false);
 
+  const handleOnClick = () => {
+    setShowConnexion(false);
+  };
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setShowConnexion(false);
+    }
+  });
+
   return (
-    <div className="modal-wrapper">
-      <form>
+    <div className="modal-wrapper" onClick={handleOnClick}>
+      <form
+        onClick={(event) => {
+          event.stopPropagation();
+        }}
+      >
         <button
           type="button"
           className="close-button"
