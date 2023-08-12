@@ -95,7 +95,7 @@ const ItemOnDisplay = ({
           />
           {dataOnDisplay.description && <p>{dataOnDisplay.description}</p>}
         </div>
-        {type === "character" && dataOnDisplay.comics.length > 0 && (
+        {dataOnDisplay.comics?.length > 0 && (
           <>
             <h4>Appearances</h4>
             <RelatedItems
