@@ -51,6 +51,8 @@ const ItemOnDisplay = ({
     }
   }, [idOnDisplay]);
 
+  console.log(dataOnDisplay.comics);
+
   return isLoading ? (
     <Loading />
   ) : (
@@ -95,7 +97,7 @@ const ItemOnDisplay = ({
           />
           {dataOnDisplay.description && <p>{dataOnDisplay.description}</p>}
         </div>
-        {dataOnDisplay.comics && (
+        {dataOnDisplay.comics.length > 0 && (
           <>
             <h4>Appearances</h4>
             <RelatedItems
