@@ -41,12 +41,26 @@ p.error-message {
   color: red;
 }
 
+.active {
+  /* Font */
+  color: white;
+}
+
+.inactive {
+  /* Font */
+  color: gray;
+}
+
 .container {
   /* Dimensions */
   max-width: 1200px;
 
   /* Marges */
   margin: 0 auto;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 /* ------------------------------------------- */
@@ -68,16 +82,6 @@ p.error-message {
 .titles h2 {
   /* Aspect */
   cursor: pointer;
-}
-
-.titles h2.inactive {
-  /* Font */
-  color: gray;
-}
-
-.titles h2.active {
-  /* Font */
-  color: white;
 }
 
 div.blue-theme {

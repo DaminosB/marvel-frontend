@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import Filter from "../Filter/Filter";
 import ResultsArray from "../ResultsArray/ResultsArray";
+import Nav from "../Nav/Nav";
 
 const ContentFetcher = ({
   type,
@@ -12,6 +13,8 @@ const ContentFetcher = ({
   setIdOnDisplay,
   token,
 }) => {
+  // From filter
+
   const [searchBar, setSearchBar] = useState("");
 
   const [data, setData] = useState({});
@@ -19,6 +22,10 @@ const ContentFetcher = ({
 
   const [page, setPage] = useState(1);
   const [count, setCount] = useState(0);
+  const [numberOfPages, setNumberOfPages] = useState(
+    Math.floor(count / 100) + 1
+  );
+  const [tempPage, setTempPage] = useState(page);
 
   const [bookmarks, setBookmarks] = useState([]);
 
@@ -42,6 +49,7 @@ const ContentFetcher = ({
           setData(data.message.results);
           setCount(data.message.count);
           setBookmarks(data.message.bookmarks);
+          setNumberOfPages(Math.floor(data.message.count / 100) + 1);
         } else if (location.pathname === "/user/bookmarks") {
           const { data } = await axios.get(
             `https://site--marvel-backend--kc7q9tc45mqv.code.run/user/bookmarks/${type}`,
@@ -64,7 +72,7 @@ const ContentFetcher = ({
       setIsLoading(false);
       console.log(error.response);
     }
-  }, [type, searchBar, page]);
+  }, [type, searchBar, page, numberOfPages]);
 
   return (
     <main className="container main-pages">
@@ -92,6 +100,14 @@ const ContentFetcher = ({
           Comics
         </h2>
       </div>
+      <Nav
+        page={page}
+        setPage={setPage}
+        count={count}
+        numberOfPages={numberOfPages}
+        tempPage={tempPage}
+        setTempPage={setTempPage}
+      />
       <ResultsArray
         count={count}
         page={page}
@@ -103,6 +119,14 @@ const ContentFetcher = ({
         setIdOnDisplay={setIdOnDisplay}
         bookmarks={bookmarks}
         token={token}
+      />
+      <Nav
+        page={page}
+        setPage={setPage}
+        count={count}
+        numberOfPages={numberOfPages}
+        tempPage={tempPage}
+        setTempPage={setTempPage}
       />
     </main>
   );
