@@ -16,7 +16,6 @@ const Thumbnail = ({
   token,
 }) => {
   const [thumbnailText, setThumbnailText] = useState(text);
-  const [isLoading, setIsLoading] = useState(false);
   const [responseMessage, setResponseMessage] = useState("");
   const [isBookmarked, setIsBookmarked] = useState(false);
 
@@ -26,7 +25,6 @@ const Thumbnail = ({
 
   const handleAddBookmark = async () => {
     try {
-      setIsLoading(true);
       const { data } = await axios.post(
         `https://site--marvel-backend--kc7q9tc45mqv.code.run/user/add-bookmark/${type}/${id}`,
         // `http://localhost:3000/user/add-bookmark/${type}/${id}`,
@@ -42,7 +40,6 @@ const Thumbnail = ({
         setIsBookmarked(true);
         setResponseMessage("");
       }, 2500);
-      setIsLoading(false);
     } catch (error) {
       console.log(error.message);
     }
@@ -50,7 +47,6 @@ const Thumbnail = ({
 
   const handleRemoveBookmark = async () => {
     try {
-      setIsLoading(true);
       const { data } = await axios.delete(
         `https://site--marvel-backend--kc7q9tc45mqv.code.run/user/remove-bookmark/${type}/${id}`,
         // `http://localhost:3000/user/remove-bookmark/${type}/${id}`,
@@ -65,7 +61,6 @@ const Thumbnail = ({
         setIsBookmarked(false);
         setResponseMessage("");
       }, 2500);
-      setIsLoading(false);
     } catch (error) {
       console.log(error.message);
     }
@@ -86,9 +81,7 @@ const Thumbnail = ({
     }
   }, []);
 
-  return isLoading ? (
-    <Loading />
-  ) : (
+  return (
     <div className="thumbnail">
       <img src={imageURL} />
 

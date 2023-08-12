@@ -51,8 +51,6 @@ const ItemOnDisplay = ({
     }
   }, [idOnDisplay]);
 
-  console.log(dataOnDisplay.comics);
-
   return isLoading ? (
     <Loading />
   ) : (
