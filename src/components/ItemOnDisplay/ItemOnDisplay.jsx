@@ -50,8 +50,6 @@ const ItemOnDisplay = ({
     }
   }, [idOnDisplay]);
 
-  // console.log(dataOnDisplay);
-
   return isLoading ? (
     <p>isLoading</p>
   ) : (
@@ -63,7 +61,6 @@ const ItemOnDisplay = ({
           setActiveComic("");
         }}
       >
-        {/* <FontAwesomeIcon icon={faXmark} /> */}
         <FontAwesomeIcon icon={faXmarkCircle} />
       </button>
       <div className="container">
