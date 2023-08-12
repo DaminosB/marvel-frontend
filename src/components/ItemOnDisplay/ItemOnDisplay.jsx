@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
 import axios from "axios";
 import RelatedItems from "../RelatedItems/RelatedItems";
+import Loading from "../Loading/Loading";
 
 const ItemOnDisplay = ({
   token,
@@ -51,7 +52,7 @@ const ItemOnDisplay = ({
   }, [idOnDisplay]);
 
   return isLoading ? (
-    <p>isLoading</p>
+    <Loading />
   ) : (
     <div className={`display-wrapper ${theme}`}>
       <button

@@ -1,17 +1,8 @@
 import "./ResultsArray.css";
-import { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAnglesLeft,
-  faAnglesRight,
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
 import Thumbnail from "../Thumbnail/Thumbnail";
+import Loading from "../Loading/Loading";
 
 const ResultsArray = ({
-  count,
-  page,
   results,
   isLoading,
   type,
@@ -19,10 +10,9 @@ const ResultsArray = ({
   setIdOnDisplay,
   bookmarks,
   token,
-  numberOfPages,
 }) => {
   return isLoading ? (
-    <p>Chargement</p>
+    <Loading />
   ) : (
     <>
       <section className="results-array">

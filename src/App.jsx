@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import Connexion from "./components/Connexion/Connexion";
 import ItemOnDisplay from "./components/ItemOnDisplay/ItemOnDisplay";
 import BookmarksPage from "./pages/BookmarksPage/BookmarksPage";
+import Loading from "./components/Loading/Loading";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token"));
@@ -54,6 +55,7 @@ function App() {
             }
           ></Route>
         </Routes>
+        {/* <Loading /> */}
         {showConnexion && (
           <Connexion setToken={setToken} setShowConnexion={setShowConnexion} />
         )}

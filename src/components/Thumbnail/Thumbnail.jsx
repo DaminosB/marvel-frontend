@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import BookmarkIcon from "../BookmarkIcon/BookmarkIcon";
+import Loading from "../Loading/Loading";
 
 const Thumbnail = ({
   format,
@@ -85,7 +86,9 @@ const Thumbnail = ({
     }
   }, []);
 
-  return (
+  return isLoading ? (
+    <Loading />
+  ) : (
     <div className="thumbnail">
       <img src={imageURL} />
 

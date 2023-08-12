@@ -2,6 +2,7 @@ import "./RelatedItems.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Thumbnail from "../Thumbnail/Thumbnail";
+import Loading from "../Loading/Loading";
 
 const RelatedItems = ({
   token,
@@ -35,7 +36,7 @@ const RelatedItems = ({
   }, []);
 
   return isLoading ? (
-    <p>Loading</p>
+    <Loading />
   ) : (
     <div className="related-items">
       {relatedData.map((item) => {
